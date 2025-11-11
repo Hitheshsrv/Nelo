@@ -1,16 +1,152 @@
-# React + Vite
+# 📝 Task Manager
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, feature-rich task management application built with **React** and **Tailwind CSS**. Organize your tasks efficiently with filtering, priority levels, and persistent storage.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ✅ **Create Tasks** - Add new tasks with title, description, priority, and due dates
+- 🔍 **Search & Filter** - Find tasks by status (completed/pending), priority level, or search term
+- 🎯 **Priority Levels** - Categorize tasks as Low, Medium, or High priority
+- 📅 **Due Dates** - Set and track task deadlines
+- ✏️ **Edit Tasks** - Update task details on the fly
+- 🗑️ **Delete Tasks** - Remove tasks you no longer need
+- 💾 **Persistent Storage** - Tasks are saved to browser's localStorage automatically
+- 📱 **Responsive Design** - Works seamlessly on desktop, tablet, and mobile devices
 
-## React Compiler
+## 🚀 Getting Started
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Prerequisites
 
-## Expanding the ESLint configuration
+- Node.js (v16 or higher)
+- npm or yarn
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Installation
+
+1. Clone the repository:
+```bash
+git clone <your-repo-url>
+cd task-manager
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Start the development server:
+```bash
+npm run dev
+```
+
+4. Open your browser and navigate to `http://localhost:5173`
+
+## 📦 Project Structure
+
+```
+task-manager/
+├── src/
+│   ├── components/
+│   │   ├── TaskForm.jsx         # Form for creating/editing tasks
+│   │   ├── TaskFilters.jsx      # Filter and search controls
+│   │   ├── TaskCard.jsx         # Individual task display component
+│   │   └── PriorityBadge.jsx    # Priority level badge component
+│   ├── App.jsx                  # Main application component
+│   ├── main.jsx                 # Entry point
+│   ├── index.css                # Global styles
+│   └── assets/
+├── public/
+│   └── vite.svg
+├── package.json
+├── vite.config.js               # Vite configuration
+├── tailwind.config.js            # Tailwind CSS configuration
+├── postcss.config.js             # PostCSS configuration
+└── eslint.config.js              # ESLint configuration
+```
+
+## 🛠️ Available Scripts
+
+- `npm run dev` - Start the development server with hot reload
+- `npm run build` - Build the project for production
+- `npm run preview` - Preview the production build locally
+- `npm run lint` - Run ESLint to check code quality
+
+## 🎨 Technologies Used
+
+- **React 19** - UI library for building interactive components
+- **Vite** - Fast build tool and development server
+- **Tailwind CSS** - Utility-first CSS framework for styling
+- **Lucide React** - Beautiful SVG icons library
+- **localStorage** - Browser API for persistent data storage
+
+## 📋 Component Overview
+
+### TaskForm
+Handles task creation with form validation for:
+- Task title (required)
+- Description (optional)
+- Priority level (Low, Medium, High)
+- Due date
+
+### TaskFilters
+Provides filtering and search capabilities:
+- Status filter (All, Completed, Pending)
+- Priority filter (All, Low, Medium, High)
+- Search by task title
+
+### TaskCard
+Displays individual task with:
+- Task title and description
+- Priority badge
+- Due date
+- Completion toggle
+- Edit and delete actions
+
+### PriorityBadge
+Visual indicator for task priority with color coding
+
+## 💾 Data Storage
+
+Tasks are automatically saved to the browser's `localStorage` under the key `'tasks'`. This allows your tasks to persist between sessions.
+
+**Task Object Structure:**
+```javascript
+{
+  id: number,                // Unique timestamp-based ID
+  title: string,             // Task title
+  description: string,       // Task description
+  priority: string,          // 'Low', 'Medium', or 'High'
+  dueDate: string,           // ISO date string (YYYY-MM-DD)
+  completed: boolean,        // Task completion status
+  createdAt: string          // ISO timestamp when task was created
+}
+```
+
+## 🎯 Usage
+
+1. **Create a Task**: Fill out the form at the top with task details and click "Add Task"
+2. **Mark Complete**: Click the checkbox on a task card to mark it as completed
+3. **Filter Tasks**: Use the filter controls to show specific task categories
+4. **Search**: Use the search box to find tasks by title
+5. **Edit a Task**: Click the edit button on a task card to modify it
+6. **Delete a Task**: Click the delete button to remove a task
+
+## 🔄 Future Enhancements
+
+- Categories/Tags for task organization
+- Task recurring options
+- Due date reminders and notifications
+- Dark mode support
+- Export/Import tasks
+- Cloud synchronization
+
+## 📄 License
+
+This project is open source and available under the MIT License.
+
+## 👤 Author
+
+Created by [Your Name]
+
+---
+
+**Happy task managing! 🚀**
